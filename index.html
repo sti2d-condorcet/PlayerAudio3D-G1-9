@@ -4,8 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Mini-projet 1STI2D - OBA">
-    <meta name="author" content="OUEDRAOGO Idrissa">
+    <meta name="description" content="PLAYER AUDIO 3D">
+    <meta name="author" content="GROUPE 1.X">
 	
     <title>HTML5 et Javascript : codage d’un player audio binaural 3D pour mesurer la qualité subjective.</title>
 
@@ -47,11 +47,11 @@
 
 
         <audio id="drama_audio"
-               poster="/PlayerAudio3D-G1-9/img/spiderman_homecoming.jpg"
+               poster="/PlayerAudio3D-G1-9/"
                controls
                controlsList="nodownload"
                style="width: 85%">
-               <source src="/PlayerAudio3D-G1-9/media/spider5ch.ogg"
+               <source src="/PlayerAudio3D-G1-9/"
                        type="audio/ogg codecs=vorbis">
            
         </audio>
@@ -77,18 +77,18 @@
 		var reader = new SceneReader();
 		
         om = new ObjectManager('/PlayerAudio3D-G1-9/scenes/spider.spatdif', ctx,
-                reader, drama_audio, 5);
+                reader, drama_audio, 0);
 				
         om.setPanningType("HRTF");
 		om.masterGain.setGain(3);
 		
-        $("#drama_audio").on("playing", function(){
+        $("#drama_audio").on("", function(){
             om.start();
         });
-        $("#drama_audio").on("pause", function(){
+        $("#drama_audio").on("", function(){
             om.pause();
         });
-        $("#drama_audio").on("seeked", function(){
+        $("#drama_audio").on("", function(){
             om.setTime(this.currentTime, false);
         });
 		
